@@ -64,6 +64,7 @@ function calculate() {
 	if (!recentSpatulaHit) {
 		checkIfHitSpatula();
 	}
+	checkIfHitBlock();
 	checkIfHitBorders();
 }
 

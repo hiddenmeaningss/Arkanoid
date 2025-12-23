@@ -54,13 +54,43 @@ function checkIfHitSpatula() {
 		ballPrevPos.top -= verticalSpeed;
 		ballPrevPos.bottom -= verticalSpeed;
 
-		console.log(ballCurrPos);
-		console.log(ballPrevPos);
-
 		if (checkVerticalCollision(ballPrevPos, spatulaCurrPos)) {
 			verticalSpeed *= -1;
 		} else {
 			horizontalSpeed *= -1;
+		}
+	}
+}
+
+function checkIfHitBlock() {
+	for (let i = blocks.length - 1; i >= 0; i--) {
+		const block = blocks[i];
+		const ballCurrPos = {
+			left: x,
+			right: x + ballDiameter,
+			top: y,
+			bottom: y + ballDiameter,
+		};
+		const blockPos = {
+			left: block.left,
+			right: block.left + block.width,
+			top: block.top,
+			bottom: block.top + block.height,
+		};
+		if (detectCollision(ballCurrPos, blockPos)) {
+			let ballPrevPos = structuredClone(ballCurrPos);
+			ballPrevPos.left -= horizontalSpeed;
+			ballPrevPos.right -= horizontalSpeed;
+			ballPrevPos.top -= verticalSpeed;
+			ballPrevPos.bottom -= verticalSpeed;
+
+			if (checkVerticalCollision(ballPrevPos, blockPos)) {
+				verticalSpeed *= -1;
+			} else {
+				horizontalSpeed *= -1;
+			}
+			block.element.remove();
+			blocks.splice(i, 1);
 		}
 	}
 }

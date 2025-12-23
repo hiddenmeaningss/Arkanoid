@@ -54,3 +54,8 @@ body {
 #start:hover {
 	transform: scale(1.1);
 }
+
+.block {
+	position: absolute;
+	background: green;
+}
