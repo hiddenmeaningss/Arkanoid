@@ -1,8 +1,9 @@
 const spatula = document.getElementById("spatula");
-const spatulaWidth = 200;
+const spatulaWidth = gameFieldWidth / 5;
 const spatulaTop = spatula.getBoundingClientRect().top;
 const spatulaHeight = 20;
-let spatulaLeft = (screenWidth - spatulaWidth) / 2;
+const spatulaSpeed = 10;
+let spatulaLeft = (gameFieldWidth - spatulaWidth) / 2;
 
 spatula.style.width = spatulaWidth + "px";
 spatula.style.left = spatulaLeft + "px";

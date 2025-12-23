@@ -1,12 +1,33 @@
-const gameOverMessage = document.getElementById("game-over");
-const startBtn = document.getElementById("start");
-const screenWidth = document.body.getBoundingClientRect().width;
 const screenHeight = document.body.getBoundingClientRect().height;
+const screenWidth = document.body.getBoundingClientRect().width;
+const gameField = document.getElementById("game-field");
+let gameFieldWidth = screenWidth;
+let gameFieldHeight = screenHeight;
+
+if (gameFieldHeight > gameFieldWidth) {
+	gameFieldHeight = gameFieldWidth;
+} else {
+	gameFieldWidth = gameFieldHeight;
+}
+
+gameFieldHeight -= 4;
+gameFieldWidth -= 4;
+
+gameField.style.width = gameFieldWidth + "px";
+gameField.style.height = gameFieldHeight + "px";
+
+gameField.style.left = (screenWidth - gameFieldWidth) / 2 + "px";
+
+const gameOverMessage = document.getElementById("game-over-msg");
+const startBtn = document.getElementById("start");
+
+startBtn.style.fontSize = gameFieldWidth / 20 + "px";
+
 let gameOver = false;
 let recentSpatulaHit = false;
 
 function start() {
-	document.body.appendChild(ball);
+	gameField.append(ball);
 	requestAnimationFrame(mainLoop);
 }
 
@@ -31,10 +52,13 @@ function calculate() {
 	y += verticalSpeed;
 
 	if (leftPressed) {
-		spatulaLeft = Math.max(spatulaLeft - 10, 0);
+		spatulaLeft = Math.max(spatulaLeft - spatulaSpeed, 0);
 	} else if (rightPressed) {
 		spatulaLeft =
-			Math.min(spatulaLeft, screenWidth - spatulaWidth - 10) + 10;
+			Math.min(
+				spatulaLeft,
+				gameFieldWidth - spatulaWidth - spatulaSpeed
+			) + spatulaSpeed;
 	}
 
 	if (!recentSpatulaHit) {

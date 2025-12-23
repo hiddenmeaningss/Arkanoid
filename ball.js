@@ -1,28 +1,27 @@
-// const ball = document.getElementById("ball");
 const ball = document.createElement("div");
 ball.id = "ball";
 const ballDiameter = 20;
 
 ball.style.width = ball.style.height = ballDiameter + "px";
 
-let x = (screenWidth - ballDiameter) / 2;
-let y = screenHeight * 0.9 - ballDiameter;
+let x = (gameFieldWidth - ballDiameter) / 2;
+let y = gameFieldHeight * 0.9 - ballDiameter;
 let horizontalSpeed = 10;
 let verticalSpeed = -10;
 let direction = "";
 let isBallPaused = true;
 
 function checkIfHitBorders() {
-	if (x >= screenWidth - ballDiameter) {
-		x = screenWidth - ballDiameter;
+	if (x >= gameFieldWidth - ballDiameter) {
+		x = gameFieldWidth - ballDiameter;
 		horizontalSpeed *= -1;
 	} else if (x < 0) {
 		x = 0;
 		horizontalSpeed *= -1;
 	}
 
-	if (y >= screenHeight - ballDiameter) {
-		y = screenHeight - ballDiameter;
+	if (y >= gameFieldHeight - ballDiameter) {
+		y = gameFieldHeight - ballDiameter;
 		gameOver = true;
 	} else if (y < 0) {
 		y = 0;
