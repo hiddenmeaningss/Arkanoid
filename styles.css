@@ -1,0 +1,52 @@
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	background: black;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#ball {
+	position: absolute;
+	background: orange;
+	border-radius: 50%;
+}
+
+#spatula {
+	position: absolute;
+	top: 90%;
+	background: lightblue;
+	border-radius: 20px;
+}
+
+#game-over {
+	font-family: sans-serif;
+	font-size: 13vw;
+	width: 100%;
+	text-align: center;
+	line-height: 100%;
+	color: red;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#start {
+	cursor: pointer;
+	font-size: 6vw;
+	margin: 0 auto;
+	padding: 10px 20px;
+	background: #198eb5;
+	color: white;
+	border-radius: 10px;
+	border: 3px solid white;
+	transition: all 0.2s;
+}
+
+#start:hover {
+	transform: scale(1.1);
+}
