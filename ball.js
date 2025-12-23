@@ -22,7 +22,7 @@ function checkIfHitBorders() {
 
 	if (y >= gameFieldHeight - ballDiameter) {
 		y = gameFieldHeight - ballDiameter;
-		gameOver = true;
+		gameLost = true;
 	} else if (y < 0) {
 		y = 0;
 		verticalSpeed *= -1;
@@ -91,6 +91,9 @@ function checkIfHitBlock() {
 			}
 			block.element.remove();
 			blocks.splice(i, 1);
+		}
+		if (blocks.length == 0) {
+			gameWon = true;
 		}
 	}
 }

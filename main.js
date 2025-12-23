@@ -18,12 +18,14 @@ gameField.style.height = gameFieldHeight + "px";
 
 gameField.style.left = (screenWidth - gameFieldWidth) / 2 + "px";
 
-const gameOverMessage = document.getElementById("game-over-msg");
+const gameLostMsg = document.getElementById("game-over-msg");
+const gameWonMsg = document.getElementById("game-won-msg");
 const startBtn = document.getElementById("start");
 
 startBtn.style.fontSize = gameFieldWidth / 20 + "px";
 
-let gameOver = false;
+let gameLost = false;
+let gameWon = false;
 let recentSpatulaHit = false;
 
 function start() {
@@ -40,10 +42,12 @@ function mainLoop() {
 
 	draw();
 
-	if (!gameOver) {
+	if (!gameLost && !gameWon) {
 		requestAnimationFrame(mainLoop);
-	} else {
-		gameOverMessage.removeAttribute("hidden");
+	} else if (gameLost) {
+		gameLostMsg.removeAttribute("hidden");
+	} else if (gameWon) {
+		gameWonMsg.removeAttribute("hidden");
 	}
 }
 
