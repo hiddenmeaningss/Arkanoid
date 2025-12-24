@@ -48,8 +48,10 @@ function mainLoop() {
 		requestAnimationFrame(mainLoop);
 	} else if (gameLost) {
 		gameLostMsg.removeAttribute("hidden");
+		ball.remove();
 	} else if (gameWon) {
 		gameWonMsg.removeAttribute("hidden");
+		ball.remove();
 	}
 }
 

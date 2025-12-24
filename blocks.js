@@ -10,13 +10,15 @@ const colors = [
 	"orange",
 ];
 
+const blockWidth = gameFieldWidth / 10;
+const blockHeight = gameFieldHeight / 20;
+
 function initializeBlockRow(top, color, i) {
-	const blockWidth = gameFieldWidth / 10;
 	const block = {
 		left: (gameFieldWidth / 8) * i + (gameFieldWidth / 8 - blockWidth) / 2,
 		top: top,
 		width: blockWidth,
-		height: gameFieldHeight / 20,
+		height: blockHeight,
 		element: document.createElement("div"),
 	};
 
