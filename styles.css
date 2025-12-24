@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Arkanoid";
-	src: url(blockblueprint.medium.ttf);
+	src: url(assets/blockblueprint.medium.ttf);
 }
 
 * {
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	background: black;
+	background: #353535;
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -23,6 +23,7 @@ body {
 	align-items: center;
 	border: 2px solid red;
 	position: absolute;
+	background: black;
 }
 
 #ball {
@@ -141,4 +142,17 @@ body {
 	top: 5vw;
 	font-size: 30px;
 	color: white;
+}
+
+#lives {
+	position: absolute;
+	left: 5vw;
+	top: 7vw;
+	font-size: 30px;
+	color: white;
+}
+
+#lives * {
+	vertical-align: bottom;
+	line-height: 32px;
 }
