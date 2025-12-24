@@ -2,7 +2,7 @@ const spatula = document.getElementById("spatula");
 const spatulaWidth = gameFieldWidth / 5;
 const spatulaTop = spatula.getBoundingClientRect().top;
 const spatulaHeight = 20;
-const spatulaSpeed = 12;
+const spatulaSpeed = gameFieldWidth / 60;
 let spatulaLeft = (gameFieldWidth - spatulaWidth) / 2;
 
 spatula.style.width = spatulaWidth + "px";

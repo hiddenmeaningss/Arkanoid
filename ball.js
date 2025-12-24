@@ -1,5 +1,5 @@
 const ball = document.createElement("div");
-let ballSpeed = 12;
+let ballSpeed = gameFieldWidth / 70;
 
 ball.id = "ball";
 const ballDiameter = 20;
@@ -64,8 +64,8 @@ function checkIfHitSpatula() {
 			const maxAngle = 75;
 			const angle = x * maxAngle;
 
-			horizontalSpeed = 12 * Math.sin((angle * Math.PI) / 180);
-			verticalSpeed = -12 * Math.cos((angle * Math.PI) / 180);
+			horizontalSpeed = ballSpeed * Math.sin((angle * Math.PI) / 180);
+			verticalSpeed = -ballSpeed * Math.cos((angle * Math.PI) / 180);
 		} else {
 			horizontalSpeed *= -1;
 		}
