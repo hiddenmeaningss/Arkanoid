@@ -30,6 +30,7 @@ let recentSpatulaHit = false;
 
 function start() {
 	gameField.append(ball);
+	gameField.style.cursor = "none";
 	requestAnimationFrame(mainLoop);
 }
 

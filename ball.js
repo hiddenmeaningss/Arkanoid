@@ -1,4 +1,6 @@
 const ball = document.createElement("div");
+let ballSpeed = 12;
+
 ball.id = "ball";
 const ballDiameter = 20;
 
@@ -6,8 +8,8 @@ ball.style.width = ball.style.height = ballDiameter + "px";
 
 let x = (gameFieldWidth - ballDiameter) / 2;
 let y = gameFieldHeight * 0.9 - ballDiameter;
-let horizontalSpeed = 10;
-let verticalSpeed = -10;
+let horizontalSpeed = ballSpeed * Math.sin((25 * Math.PI) / 180);
+let verticalSpeed = -ballSpeed * Math.cos((25 * Math.PI) / 180);
 let direction = "";
 let isBallPaused = true;
 
@@ -55,7 +57,15 @@ function checkIfHitSpatula() {
 		ballPrevPos.bottom -= verticalSpeed;
 
 		if (checkVerticalCollision(ballPrevPos, spatulaCurrPos)) {
-			verticalSpeed *= -1;
+			const ballMid = ballCurrPos.left + ballDiameter / 2;
+			const hitPosition = (ballMid - spatulaCurrPos.left) / spatulaWidth;
+			const x = hitPosition * 2 - 1;
+
+			const maxAngle = 75;
+			const angle = x * maxAngle;
+
+			horizontalSpeed = 12 * Math.sin((angle * Math.PI) / 180);
+			verticalSpeed = -12 * Math.cos((angle * Math.PI) / 180);
 		} else {
 			horizontalSpeed *= -1;
 		}
