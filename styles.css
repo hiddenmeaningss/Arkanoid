@@ -67,6 +67,63 @@ body {
 }
 
 .block {
+	box-sizing: border-box;
 	position: absolute;
-	background: green;
+	border: solid;
+}
+
+.yellow {
+	background: #e0e010;
+	border-color: #e0e010;
+	border-bottom-color: #887808;
+	border-right-color: #887808;
+}
+
+.white {
+	background: #f8f8f8;
+	border-color: #f8f8f8;
+	border-bottom-color: #8888b8;
+	border-right-color: #8888b8;
+}
+
+.pink {
+	background: #e848b8;
+	border-color: #e848b8;
+	border-bottom-color: #a83068;
+	border-right-color: #a83068;
+}
+
+.blue {
+	background: #1878e8;
+	border-color: #1878e8;
+	border-bottom-color: #084888;
+	border-right-color: #084888;
+}
+
+.red {
+	background: #c81840;
+	border-color: #c81840;
+	border-bottom-color: #780828;
+	border-right-color: #780828;
+}
+
+.green {
+	background: #08e828;
+	border-color: #08e828;
+	border-bottom-color: #087818;
+	border-right-color: #087818;
+}
+
+.lightblue {
+	background: #08d8e8;
+	border-color: #08d8e8;
+	border-bottom-color: #086898;
+	border-right-color: #086898;
+}
+
+.orange {
+	background: #f08808;
+	border-color: #f08808;
+	border-bottom-color: #d05008;
+	border-right-color: #d05008;
 }
