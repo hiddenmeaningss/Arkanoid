@@ -22,6 +22,9 @@ const gameLostMsg = document.getElementById("game-over-msg");
 const gameWonMsg = document.getElementById("game-won-msg");
 const startBtn = document.getElementById("start");
 
+const scoreDiv = document.getElementById("score");
+let score = 0;
+
 startBtn.style.fontSize = gameFieldWidth / 20 + "px";
 
 let gameLost = false;

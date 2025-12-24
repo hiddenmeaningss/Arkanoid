@@ -101,6 +101,8 @@ function checkIfHitBlock() {
 			}
 			block.element.remove();
 			blocks.splice(i, 1);
+
+			scoreDiv.textContent = `Score: ${++score}`;
 		}
 		if (blocks.length == 0) {
 			gameWon = true;

@@ -134,3 +134,11 @@ body {
 	border-bottom-color: #d05008;
 	border-right-color: #d05008;
 }
+
+#score {
+	position: absolute;
+	left: 5vw;
+	top: 5vw;
+	font-size: 30px;
+	color: white;
+}
