@@ -23,20 +23,49 @@ body {
 	align-items: center;
 	border: 2px solid red;
 	position: absolute;
-	background: black;
+	background: url(assets/background.png);
+	background-size: 48px 32px;
 }
 
 #ball {
 	position: absolute;
-	background: orange;
+	background: radial-gradient(
+		circle at 30% 30%,
+		#ffffff,
+		#4aa3ff 40%,
+		#004080 100%
+	);
 	border-radius: 50%;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
 }
 
 #spatula {
 	position: absolute;
 	top: 90%;
-	background: lightblue;
+	background: linear-gradient(#808080 0%, #e0e0e0 40%, #404040 100%);
 	border-radius: 20px;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+	z-index: 1;
+}
+
+#spatula div:first-child {
+	display: inline-block;
+	height: 100%;
+	width: 15%;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
+	border-right: solid 3px black;
+	background: linear-gradient(#981838 0%, #d83060 40%, #400818 100%);
+}
+
+#spatula div:last-child {
+	float: right;
+	height: 100%;
+	width: 15%;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	border-left: solid 3px black;
+	background: linear-gradient(#981838 0%, #d83060 40%, #400818 100%);
 }
 
 #game-over-msg {
@@ -47,6 +76,7 @@ body {
 	color: red;
 	-webkit-user-select: none;
 	user-select: none;
+	text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
 }
 
 #game-won-msg {
@@ -54,7 +84,8 @@ body {
 	width: 100%;
 	text-align: center;
 	line-height: 100%;
-	color: green;
+	color: #00ff66;
+	text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
 	-webkit-user-select: none;
 	user-select: none;
 }
@@ -78,6 +109,7 @@ body {
 	box-sizing: border-box;
 	position: absolute;
 	border: solid;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
 }
 
 .yellow {
