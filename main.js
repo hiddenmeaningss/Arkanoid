@@ -4,6 +4,8 @@ const gameField = document.getElementById("game-field");
 let gameFieldWidth = screenWidth;
 let gameFieldHeight = screenHeight;
 
+let lives = 2;
+
 if (gameFieldHeight > gameFieldWidth) {
 	gameFieldHeight = gameFieldWidth;
 } else {

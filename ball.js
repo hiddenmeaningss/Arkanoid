@@ -2,7 +2,7 @@ const ball = document.createElement("div");
 let ballSpeed = gameFieldWidth / 70;
 
 ball.id = "ball";
-const ballDiameter = 20;
+const ballDiameter = gameFieldWidth / 36;
 
 ball.style.width = ball.style.height = ballDiameter + "px";
 
@@ -23,8 +23,22 @@ function checkIfHitBorders() {
 	}
 
 	if (y >= gameFieldHeight - ballDiameter) {
-		y = gameFieldHeight - ballDiameter;
-		gameLost = true;
+		if (lives == 0) {
+			y = gameFieldHeight - ballDiameter;
+			gameLost = true;
+			document.querySelector(".heart").remove();
+		} else {
+			lives--;
+			const heartsArr = Array.from(document.querySelectorAll(".heart"));
+			heartsArr[heartsArr.length - 1].remove();
+
+			x = (gameFieldWidth - ballDiameter) / 2;
+			y = gameFieldHeight * 0.9 - ballDiameter;
+
+			isBallPaused = true;
+
+			spatulaLeft = (gameFieldWidth - spatulaWidth) / 2;
+		}
 	} else if (y < 0) {
 		y = 0;
 		verticalSpeed *= -1;
