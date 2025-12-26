@@ -214,9 +214,6 @@ button:hover {
 }
 
 #next-lvl-btn {
-	position: absolute;
-	left: 5vw;
-	top: 10vw;
 	font-size: 3vw;
 }
 
