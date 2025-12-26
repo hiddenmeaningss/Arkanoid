@@ -3,6 +3,11 @@ const screenWidth = document.body.getBoundingClientRect().width;
 const gameField = document.getElementById("game-field");
 let gameFieldWidth = screenWidth;
 let gameFieldHeight = screenHeight;
+if (gameFieldHeight > gameFieldWidth) {
+	gameFieldHeight = gameFieldWidth;
+} else {
+	gameFieldWidth = gameFieldHeight / (14 / 11);
+}
 
 const maxScoreDiv = document.getElementById("max-score");
 let maxScore = parseInt(localStorage.getItem("maxScore")) || 0;
@@ -11,13 +16,7 @@ const scoreDiv = document.getElementById("score");
 let score = 0;
 
 let lives = 2;
-let roundNum = 1;
-
-if (gameFieldHeight > gameFieldWidth) {
-	gameFieldHeight = gameFieldWidth;
-} else {
-	gameFieldWidth = gameFieldHeight;
-}
+let level = 1;
 
 gameFieldHeight -= 4;
 gameFieldWidth -= 4;

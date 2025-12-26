@@ -10,7 +10,7 @@ function initializeLevel2() {
 	ball.removeAttribute("hidden");
 	x = (gameFieldWidth - ballDiameter) / 2;
 	y = gameFieldHeight * 0.9 - ballDiameter;
-	gameField.style.background = "url(../assets/background2.png)";
+	gameField.style.background = "url(assets/background2.png)";
 	gameField.style.backgroundSize = "48px 32px";
 	isBallPaused = true;
 

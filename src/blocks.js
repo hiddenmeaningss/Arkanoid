@@ -40,7 +40,7 @@ function initializeBlockRow(top, color, i) {
 				? 110
 				: color == "yellow"
 				? 120
-				: 50 * roundNum,
+				: 50 * level,
 	};
 
 	block.element.classList.add("block");
@@ -81,7 +81,7 @@ function initializeBlockColumn(top, left, color, i) {
 				? 110
 				: color == "yellow"
 				? 120
-				: 50 * roundNum,
+				: 50 * level,
 	};
 
 	block.element.classList.add("block");
