@@ -1,9 +1,10 @@
 function initializeLevel2() {
 	levelDiv.textContent = "Level 2";
+	level = 2;
 	nextLvlBtn.setAttribute("hidden", "true");
 
 	gameWon = false;
-	gameWonMsg.remove();
+	gameWonMsg.setAttribute("hidden", "true");
 
 	spatulaLeft = (gameFieldWidth - spatulaWidth) / 2;
 	ball.removeAttribute("hidden");
