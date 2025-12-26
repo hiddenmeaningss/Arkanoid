@@ -8,18 +8,21 @@ const colors = [
 	"green",
 	"lightblue",
 	"orange",
+	"silver",
 ];
 
-const blockWidth = gameFieldWidth / 10;
-const blockHeight = gameFieldHeight / 20;
+const blockWidth = gameFieldWidth / 11;
+const blockHeight = gameFieldHeight / 22;
 
 function initializeBlockRow(top, color, i) {
 	const block = {
-		left: (gameFieldWidth / 8) * i + (gameFieldWidth / 8 - blockWidth) / 2,
+		left: blockWidth * i,
 		top: top,
 		width: blockWidth,
 		height: blockHeight,
 		element: document.createElement("div"),
+		color: color,
+		hitPoints: color == "silver" ? 2 : 1,
 	};
 
 	block.element.classList.add("block");

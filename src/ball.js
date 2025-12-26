@@ -2,7 +2,7 @@ const ball = document.createElement("div");
 let ballSpeed = gameFieldWidth / 70;
 
 ball.id = "ball";
-const ballDiameter = gameFieldWidth / 36;
+const ballDiameter = gameFieldWidth / 46;
 
 ball.style.width = ball.style.height = ballDiameter + "px";
 
@@ -113,13 +113,19 @@ function checkIfHitBlock() {
 			} else {
 				horizontalSpeed *= -1;
 			}
-			block.element.remove();
-			blocks.splice(i, 1);
+			block.hitPoints--;
+			if (block.hitPoints == 0) {
+				block.element.remove();
+				blocks.splice(i, 1);
+			} else {
+				block.element.classList.add("shine");
+			}
 
 			scoreDiv.textContent = `Score: ${++score}`;
-		}
-		if (blocks.length == 0) {
-			gameWon = true;
+			if (blocks.length == 0) {
+				gameWon = true;
+			}
+			break;
 		}
 	}
 }

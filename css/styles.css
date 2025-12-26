@@ -1,6 +1,24 @@
 @font-face {
 	font-family: "Arkanoid";
-	src: url(assets/blockblueprint.medium.ttf);
+	src: url(../assets/blockblueprint.medium.ttf);
+}
+
+@keyframes blink {
+	10% {
+		opacity: 50%;
+	}
+}
+
+@keyframes shiningEffect {
+	0% {
+		opacity: 1;
+		margin-left: -20%;
+	}
+
+	100% {
+		opacity: 1;
+		margin-left: 100%;
+	}
 }
 
 * {
@@ -23,7 +41,7 @@ body {
 	align-items: center;
 	border: 2px solid red;
 	position: absolute;
-	background: url(assets/background.png);
+	background: url(../assets/background.png);
 	background-size: 48px 32px;
 }
 
@@ -76,7 +94,8 @@ body {
 	color: red;
 	-webkit-user-select: none;
 	user-select: none;
-	text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
+	text-shadow: 0px 0px 20px black;
+	z-index: 1;
 }
 
 #game-won-msg {
@@ -88,20 +107,20 @@ body {
 	text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
 	-webkit-user-select: none;
 	user-select: none;
+	z-index: 1;
 }
 
-#start {
+button {
 	cursor: pointer;
 	margin: 0 auto;
 	padding: 10px 20px;
-	background: #198eb5;
+	background: linear-gradient(#198eb5 0%, #95d9c3 40%, #198eb5 100%);
 	color: white;
-	border-radius: 10px;
 	border: 3px solid white;
-	transition: all 0.2s;
+	animation: blink 1s step-start infinite;
 }
 
-#start:hover {
+button:hover {
 	transform: scale(1.1);
 }
 
@@ -168,6 +187,14 @@ body {
 	border-right-color: #d05008;
 }
 
+.silver {
+	background: #c8c8e8;
+	border-color: #c8c8e8;
+	border-top-color: #8888b8;
+	border-right-color: #484878;
+	border-bottom-color: #686898;
+}
+
 #score {
 	position: absolute;
 	left: 5vw;
@@ -187,4 +214,31 @@ body {
 #lives * {
 	vertical-align: bottom;
 	line-height: 32px;
+}
+
+#level-div {
+	position: absolute;
+	left: 5vw;
+	color: white;
+	font-size: 5vw;
+}
+
+.silver::after {
+	margin-top: -12%;
+	margin-left: -24%;
+	margin-bottom: -12%;
+	content: "";
+	display: block;
+	opacity: 0;
+	background: rgba(255, 255, 255, 0.5);
+	width: 10px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	rotate: 20deg;
+}
+
+.silver.shine::after {
+	animation: shiningEffect 0.2s linear 1;
 }
