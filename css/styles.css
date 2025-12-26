@@ -203,6 +203,13 @@ button:hover {
 	color: white;
 }
 
+#level-div {
+	position: absolute;
+	left: 5vw;
+	color: white;
+	font-size: 5vw;
+}
+
 #lives {
 	position: absolute;
 	left: 5vw;
@@ -216,11 +223,11 @@ button:hover {
 	line-height: 32px;
 }
 
-#level-div {
+#next-lvl-btn {
 	position: absolute;
 	left: 5vw;
-	color: white;
-	font-size: 5vw;
+	top: 10vw;
+	font-size: 3vw;
 }
 
 .silver::after {

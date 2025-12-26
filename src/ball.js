@@ -62,7 +62,7 @@ function checkIfHitSpatula() {
 		recentSpatulaHit = true;
 		setTimeout(() => {
 			recentSpatulaHit = false;
-		}, 10);
+		});
 
 		let ballPrevPos = structuredClone(ballCurrPos);
 		ballPrevPos.left -= horizontalSpeed;

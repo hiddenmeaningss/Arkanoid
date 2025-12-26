@@ -1,4 +1,5 @@
 const levelDiv = document.getElementById("level-div");
+let level = 1;
 
 function initializeLevel1() {
 	levelDiv.textContent = "Level 1";

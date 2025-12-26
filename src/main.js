@@ -24,6 +24,7 @@ gameField.style.left = (screenWidth - gameFieldWidth) / 2 + "px";
 const gameLostMsg = document.getElementById("game-over-msg");
 const gameWonMsg = document.getElementById("game-won-msg");
 const startBtn = document.getElementById("start");
+const nextLvlBtn = document.getElementById("next-lvl-btn");
 
 const scoreDiv = document.getElementById("score");
 let score = 0;
@@ -57,7 +58,10 @@ function mainLoop() {
 		ball.remove();
 	} else if (gameWon) {
 		gameWonMsg.removeAttribute("hidden");
-		ball.remove();
+		ball.setAttribute("hidden", "true");
+		if (level != 2) {
+			nextLvlBtn.removeAttribute("hidden");
+		}
 	}
 }
 
