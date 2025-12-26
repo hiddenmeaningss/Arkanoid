@@ -195,32 +195,22 @@ button:hover {
 	border-bottom-color: #686898;
 }
 
-#score {
+#information-thingy {
 	position: absolute;
 	left: 5vw;
-	top: 5vw;
-	font-size: 30px;
 	color: white;
+	font-size: 2vw;
 }
 
 #level-div {
-	position: absolute;
-	left: 5vw;
-	color: white;
 	font-size: 5vw;
-}
-
-#lives {
-	position: absolute;
-	left: 5vw;
-	top: 7vw;
-	font-size: 30px;
-	color: white;
 }
 
 #lives * {
 	vertical-align: bottom;
-	line-height: 32px;
+	line-height: 2vw;
+	width: 2vw;
+	height: 2vw;
 }
 
 #next-lvl-btn {

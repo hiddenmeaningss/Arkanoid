@@ -118,6 +118,9 @@ function checkIfHitBlock() {
 				block.element.remove();
 				blocks.splice(i, 1);
 				score = score + block.score;
+				maxScore = Math.max(maxScore, score);
+				localStorage.setItem("maxScore", maxScore);
+				maxScoreDiv.textContent = `Max Score: ${maxScore}`;
 				scoreDiv.textContent = `Score: ${score}`;
 			} else {
 				block.element.classList.add("shine");

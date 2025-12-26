@@ -4,6 +4,12 @@ const gameField = document.getElementById("game-field");
 let gameFieldWidth = screenWidth;
 let gameFieldHeight = screenHeight;
 
+const maxScoreDiv = document.getElementById("max-score");
+let maxScore = parseInt(localStorage.getItem("maxScore")) || 0;
+maxScoreDiv.textContent = `Max Score: ${maxScore}`;
+const scoreDiv = document.getElementById("score");
+let score = 0;
+
 let lives = 2;
 let roundNum = 1;
 
@@ -25,9 +31,6 @@ const gameLostMsg = document.getElementById("game-over-msg");
 const gameWonMsg = document.getElementById("game-won-msg");
 const startBtn = document.getElementById("start");
 const nextLvlBtn = document.getElementById("next-lvl-btn");
-
-const scoreDiv = document.getElementById("score");
-let score = 0;
 
 startBtn.style.fontSize = gameFieldWidth / 20 + "px";
 
@@ -69,7 +72,8 @@ function calculate() {
 	x += horizontalSpeed;
 	y += verticalSpeed;
 
-	if (leftPressed) {
+	if (leftPressed && rightPressed) {
+	} else if (leftPressed) {
 		spatulaLeft = Math.max(spatulaLeft - spatulaSpeed, 0);
 	} else if (rightPressed) {
 		spatulaLeft =
