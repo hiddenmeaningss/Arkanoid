@@ -23,6 +23,24 @@ function initializeBlockRow(top, color, i) {
 		element: document.createElement("div"),
 		color: color,
 		hitPoints: color == "silver" ? 2 : 1,
+		score:
+			color == "white"
+				? 50
+				: color == "orange"
+				? 60
+				: color == "lightblue"
+				? 70
+				: color == "green"
+				? 80
+				: color == "red"
+				? 90
+				: color == "blue"
+				? 100
+				: color == "pink"
+				? 110
+				: color == "yellow"
+				? 120
+				: 50 * roundNum,
 	};
 
 	block.element.classList.add("block");

@@ -62,7 +62,7 @@ function checkIfHitSpatula() {
 		recentSpatulaHit = true;
 		setTimeout(() => {
 			recentSpatulaHit = false;
-		}, 1000);
+		}, 10);
 
 		let ballPrevPos = structuredClone(ballCurrPos);
 		ballPrevPos.left -= horizontalSpeed;
@@ -117,11 +117,11 @@ function checkIfHitBlock() {
 			if (block.hitPoints == 0) {
 				block.element.remove();
 				blocks.splice(i, 1);
+				score = score + block.score;
+				scoreDiv.textContent = `Score: ${score}`;
 			} else {
 				block.element.classList.add("shine");
 			}
-
-			scoreDiv.textContent = `Score: ${++score}`;
 			if (blocks.length == 0) {
 				gameWon = true;
 			}

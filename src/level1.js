@@ -15,7 +15,7 @@ function initializeLevel1() {
 	}
 
 	for (let i = 0; i < 11; i++) {
-		initializeBlockRow(7 * blockHeight, "orange", i);
+		initializeBlockRow(7 * blockHeight, "yellow", i);
 	}
 
 	for (let i = 0; i < 11; i++) {

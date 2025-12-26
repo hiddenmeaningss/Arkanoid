@@ -5,6 +5,7 @@ let gameFieldWidth = screenWidth;
 let gameFieldHeight = screenHeight;
 
 let lives = 2;
+let roundNum = 1;
 
 if (gameFieldHeight > gameFieldWidth) {
 	gameFieldHeight = gameFieldWidth;
