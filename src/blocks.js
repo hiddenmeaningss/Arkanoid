@@ -12,7 +12,7 @@ const colors = [
 ];
 
 const blockWidth = gameFieldWidth / 11;
-const blockHeight = gameFieldHeight / 22;
+const blockHeight = gameFieldHeight / 28;
 
 function initializeBlockRow(top, color, i) {
 	const block = {
