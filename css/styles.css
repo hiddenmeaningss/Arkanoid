@@ -226,8 +226,7 @@ button:hover {
 	font-size: 3vw;
 }
 
-.silver::after,
-.gold::after {
+.silver::after {
 	margin: -12.5% 0 -12.5% -12.5%;
 	content: "";
 	display: block;
@@ -239,7 +238,6 @@ button:hover {
 	rotate: 20deg;
 }
 
-.silver.shine::after,
-.gold.shine::after {
-	animation: shiningEffect 0.2s linear 1;
+.silver.shine::after {
+	animation: shiningEffect 0.5s linear 1;
 }

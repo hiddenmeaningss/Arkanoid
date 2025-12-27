@@ -103,16 +103,19 @@ function checkIfHitBlock() {
 			bottom: block.top + block.height,
 		};
 		if (detectCollision(ballCurrPos, blockPos)) {
+			// console.log(ballCurrPos, blockPos);
+			// isBallPaused = true;
+
 			let ballPrevPos = structuredClone(ballCurrPos);
 			ballPrevPos.left -= horizontalSpeed;
 			ballPrevPos.right -= horizontalSpeed;
 			ballPrevPos.top -= verticalSpeed;
 			ballPrevPos.bottom -= verticalSpeed;
 
-			if (checkVerticalCollision(ballPrevPos, blockPos)) {
-				verticalSpeed *= -1;
-			} else {
+			if (checkHorizontalCollision(ballPrevPos, blockPos)) {
 				horizontalSpeed *= -1;
+			} else {
+				verticalSpeed *= -1;
 			}
 			block.hitPoints--;
 			if (block.hitPoints == 0) {
@@ -123,8 +126,8 @@ function checkIfHitBlock() {
 				localStorage.setItem("maxScore", maxScore);
 				maxScoreDiv.textContent = `Max Score: ${maxScore}`;
 				scoreDiv.textContent = `Score: ${score}`;
+				isBallPaused = false;
 			} else {
-				block.element.classList.remove("shine");
 				block.element.classList.add("shine");
 			}
 			if (blocks.length == 0) {
