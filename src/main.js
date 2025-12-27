@@ -17,14 +17,15 @@ let score = 0;
 
 let lives = 2;
 let level = 1;
+const maxLevel = 3;
 
-gameFieldHeight -= 4;
-gameFieldWidth -= 4;
-
+const gameFieldBorder = 6;
+gameFieldHeight -= 2 * gameFieldBorder;
+gameFieldWidth -= 2 * gameFieldBorder;
 gameField.style.width = gameFieldWidth + "px";
 gameField.style.height = gameFieldHeight + "px";
-
 gameField.style.left = (screenWidth - gameFieldWidth) / 2 + "px";
+gameField.style.borderWidth = gameFieldBorder + "px";
 
 const gameLostMsg = document.getElementById("game-over-msg");
 const gameWonMsg = document.getElementById("game-won-msg");
@@ -61,8 +62,9 @@ function mainLoop() {
 	} else if (gameWon) {
 		gameWonMsg.removeAttribute("hidden");
 		ball.setAttribute("hidden", "true");
-		if (level != 2) {
-			nextLvlBtn.removeAttribute("hidden");
+		nextLvlBtn.removeAttribute("hidden");
+		if (level == maxLevel) {
+			nextLvlBtn.textContent = "Play again";
 		}
 	}
 }

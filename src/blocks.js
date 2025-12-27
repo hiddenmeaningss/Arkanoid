@@ -9,6 +9,7 @@ const colors = [
 	"lightblue",
 	"orange",
 	"silver",
+	"gold",
 ];
 
 const blockWidth = gameFieldWidth / 11;
@@ -22,7 +23,7 @@ function initializeBlockRow(top, color, i) {
 		height: blockHeight,
 		element: document.createElement("div"),
 		color: color,
-		hitPoints: color == "silver" ? 2 : 1,
+		hitPoints: color == "silver" ? 2 : color == "gold" ? Infinity : 1,
 		score:
 			color == "white"
 				? 50
@@ -51,7 +52,10 @@ function initializeBlockRow(top, color, i) {
 	block.element.style.top = block.top + "px";
 	block.element.style.width = block.width + "px";
 	block.element.style.height = block.height + "px";
-	block.element.style.borderWidth = block.height / 5 + "px";
+	block.element.style.borderWidth =
+		block.color == "silver" || block.color == "gold"
+			? block.height / 4 + "px"
+			: block.height / 5 + "px";
 
 	blocks.push(block);
 }
@@ -100,5 +104,7 @@ function initializeBlockColumn(top, left, color, i) {
 function initializeNextLevel() {
 	if (level == 1) {
 		initializeLevel2();
+	} else if (level == maxLevel) {
+		location.reload();
 	}
 }

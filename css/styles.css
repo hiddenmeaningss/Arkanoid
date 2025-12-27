@@ -12,11 +12,13 @@
 @keyframes shiningEffect {
 	0% {
 		opacity: 1;
+		filter: blur(5px);
 		margin-left: -20%;
 	}
 
 	100% {
 		opacity: 1;
+		filter: blur(5px);
 		margin-left: 100%;
 	}
 }
@@ -39,7 +41,7 @@ body {
 #game-field {
 	display: flex;
 	align-items: center;
-	border: 2px solid red;
+	border: solid red;
 	position: absolute;
 	background: url(../assets/background.png);
 	background-size: 48px 32px;
@@ -59,7 +61,6 @@ body {
 
 #spatula {
 	position: absolute;
-	top: 90%;
 	background: linear-gradient(#808080 0%, #e0e0e0 40%, #404040 100%);
 	border-radius: 20px;
 	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
@@ -195,6 +196,14 @@ button:hover {
 	border-bottom-color: #686898;
 }
 
+.gold {
+	background: #e0d008;
+	border-color: #e0d008;
+	border-top-color: #b09008;
+	border-right-color: #605008;
+	border-bottom-color: #807008;
+}
+
 #information-thingy {
 	position: absolute;
 	left: 5vw;
@@ -217,22 +226,20 @@ button:hover {
 	font-size: 3vw;
 }
 
-.silver::after {
-	margin-top: -12%;
-	margin-left: -24%;
-	margin-bottom: -12%;
+.silver::after,
+.gold::after {
+	margin: -12.5% 0 -12.5% -12.5%;
 	content: "";
 	display: block;
-	opacity: 0;
-	background: rgba(255, 255, 255, 0.5);
 	width: 10px;
 	position: absolute;
-	top: 0;
-	left: 0;
-	bottom: 0;
+	inset: 0;
+	opacity: 0;
+	background: rgba(255, 255, 255, 0.5);
 	rotate: 20deg;
 }
 
-.silver.shine::after {
+.silver.shine::after,
+.gold.shine::after {
 	animation: shiningEffect 0.2s linear 1;
 }

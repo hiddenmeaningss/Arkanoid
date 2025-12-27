@@ -28,6 +28,7 @@ function checkIfHitBorders() {
 			gameLost = true;
 			document.querySelector(".heart").remove();
 		} else {
+			// Still lives left
 			lives--;
 			const heartsArr = Array.from(document.querySelectorAll(".heart"));
 			heartsArr[heartsArr.length - 1].remove();
@@ -123,6 +124,7 @@ function checkIfHitBlock() {
 				maxScoreDiv.textContent = `Max Score: ${maxScore}`;
 				scoreDiv.textContent = `Score: ${score}`;
 			} else {
+				block.element.classList.remove("shine");
 				block.element.classList.add("shine");
 			}
 			if (blocks.length == 0) {

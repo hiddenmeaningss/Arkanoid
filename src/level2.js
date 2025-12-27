@@ -11,7 +11,7 @@ function initializeLevel2() {
 	x = (gameFieldWidth - ballDiameter) / 2;
 	y = gameFieldHeight * 0.9 - ballDiameter;
 	gameField.style.background = "url(assets/background2.png)";
-	gameField.style.backgroundSize = "48px 32px";
+	gameField.style.backgroundSize = "64px 64px";
 	isBallPaused = true;
 
 	requestAnimationFrame(mainLoop);

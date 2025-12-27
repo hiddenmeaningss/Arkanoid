@@ -1,6 +1,6 @@
 const spatula = document.getElementById("spatula");
 const spatulaWidth = gameFieldWidth / 5;
-const spatulaTop = spatula.getBoundingClientRect().top;
+const spatulaTop = gameFieldHeight * 0.9;
 const spatulaHeight = gameFieldWidth / 36;
 const spatulaSpeed = gameFieldWidth / 60;
 let spatulaLeft = (gameFieldWidth - spatulaWidth) / 2;
@@ -8,6 +8,7 @@ let spatulaLeft = (gameFieldWidth - spatulaWidth) / 2;
 spatula.style.width = spatulaWidth + "px";
 spatula.style.left = spatulaLeft + "px";
 spatula.style.height = spatulaHeight + "px";
+spatula.style.top = spatulaTop + "px";
 
 let leftPressed = false;
 let rightPressed = false;
