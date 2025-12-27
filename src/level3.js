@@ -25,4 +25,31 @@ function initializeLevel3() {
 	for (i = 3; i < 11; i++) {
 		initializeBlockRow(5 * blockHeight, "gold", i);
 	}
+	for (i = 0; i < 11; i++) {
+		initializeBlockRow(7 * blockHeight, "red", i);
+	}
+	for (i = 0; i < 8; i++) {
+		initializeBlockRow(9 * blockHeight, "gold", i);
+	}
+	for (i = 8; i < 11; i++) {
+		initializeBlockRow(9 * blockHeight, "white", i);
+	}
+	for (i = 0; i < 11; i++) {
+		initializeBlockRow(11 * blockHeight, "pink", i);
+	}
+	for (i = 0; i < 3; i++) {
+		initializeBlockRow(13 * blockHeight, "blue", i);
+	}
+	for (i = 3; i < 11; i++) {
+		initializeBlockRow(13 * blockHeight, "gold", i);
+	}
+	for (i = 0; i < 11; i++) {
+		initializeBlockRow(15 * blockHeight, "blue", i);
+	}
+	for (i = 0; i < 8; i++) {
+		initializeBlockRow(17 * blockHeight, "gold", i);
+	}
+	for (i = 8; i < 11; i++) {
+		initializeBlockRow(17 * blockHeight, "blue", i);
+	}
 }

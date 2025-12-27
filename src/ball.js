@@ -103,14 +103,14 @@ function checkIfHitBlock() {
 			bottom: block.top + block.height,
 		};
 		if (detectCollision(ballCurrPos, blockPos)) {
-			// console.log(ballCurrPos, blockPos);
-			// isBallPaused = true;
-
 			let ballPrevPos = structuredClone(ballCurrPos);
 			ballPrevPos.left -= horizontalSpeed;
 			ballPrevPos.right -= horizontalSpeed;
 			ballPrevPos.top -= verticalSpeed;
 			ballPrevPos.bottom -= verticalSpeed;
+
+			ball.style.left = ballPrevPos.left + "px";
+			ball.style.top = ballPrevPos.top + "px";
 
 			if (checkHorizontalCollision(ballPrevPos, blockPos)) {
 				horizontalSpeed *= -1;
@@ -130,7 +130,15 @@ function checkIfHitBlock() {
 			} else {
 				block.element.classList.add("shine");
 			}
-			if (blocks.length == 0) {
+
+			let allGold = true;
+			for (let j = 0; j < blocks.length; j++) {
+				if (blocks[j].color != "gold") {
+					allGold = false;
+				}
+			}
+
+			if (blocks.length == 0 || allGold) {
 				gameWon = true;
 			}
 			break;
