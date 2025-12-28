@@ -104,6 +104,8 @@ function initializeBlockColumn(top, left, color, i) {
 function initializeNextLevel() {
 	if (level == 1) {
 		initializeLevel2();
+	} else if (level == 2) {
+		initializeLevel3();
 	} else if (level == maxLevel) {
 		location.reload();
 	}
