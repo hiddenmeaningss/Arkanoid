@@ -106,6 +106,8 @@ function initializeNextLevel() {
 		initializeLevel2();
 	} else if (level == 2) {
 		initializeLevel3();
+	} else if (level == 3) {
+		initializeLevel4();
 	} else if (level == maxLevel) {
 		location.reload();
 	}
