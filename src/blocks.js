@@ -102,6 +102,10 @@ function initializeBlockColumn(top, left, color, i) {
 }
 
 function initializeNextLevel() {
+	for (let i = blocks.length - 1; i >= 0; i--) {
+		blocks[i].element.remove();
+		blocks.splice(i, 1);
+	}
 	if (level == 1) {
 		initializeLevel2();
 	} else if (level == 2) {
