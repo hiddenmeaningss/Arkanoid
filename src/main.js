@@ -17,7 +17,7 @@ let score = 0;
 
 let lives = 2;
 let level = 1;
-const maxLevel = 4;
+const maxLevel = 5;
 
 const gameFieldBorder = 6;
 gameFieldHeight -= 2 * gameFieldBorder;
