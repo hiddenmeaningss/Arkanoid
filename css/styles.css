@@ -9,20 +9,6 @@
 	}
 }
 
-@keyframes shiningEffect {
-	0% {
-		opacity: 1;
-		filter: blur(5px);
-		margin-left: -20%;
-	}
-
-	100% {
-		opacity: 1;
-		filter: blur(5px);
-		margin-left: 100%;
-	}
-}
-
 * {
 	font-family: Arkanoid;
 }
@@ -126,7 +112,6 @@ button:hover {
 }
 
 .block {
-	--border-width: 2px;
 	box-sizing: border-box;
 	position: absolute;
 	border: solid var(--border-width);
@@ -227,16 +212,25 @@ button:hover {
 	font-size: 3vw;
 }
 
-.green::after {
-	content: "";
-	background: red;
-	position: absolute;
-	top: calc(var(--border-width) * -1);
-	left: calc(var(--border-width) * -1);
-	width: 10px;
-	height: calc(100% + 2 * var(--border-width));
+.silver.shine {
+	animation: shiningEffect 0.5s linear;
 }
 
-.silver.shine::after {
-	animation: shiningEffect 0.5s linear 1;
+@keyframes shiningEffect {
+	0% {
+		border-top-color: rgba(255, 255, 255, 0.5);
+		border-left-color: rgba(255, 255, 255, 0.5);
+	}
+
+	33% {
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+
+	66% {
+		border-right-color: rgba(255, 255, 255, 0.5);
+		border-bottom-color: rgba(255, 255, 255, 0.5);
+	}
+
+	100% {
+	}
 }
