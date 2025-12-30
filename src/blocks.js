@@ -48,14 +48,16 @@ function initializeBlockRow(top, color, i) {
 	block.element.classList.add(color);
 	gameField.append(block.element);
 
+	const borderWidth =
+		block.color == "silver" || block.color == "gold"
+			? block.height / 4
+			: block.height / 5;
+
 	block.element.style.left = block.left + "px";
 	block.element.style.top = block.top + "px";
 	block.element.style.width = block.width + "px";
 	block.element.style.height = block.height + "px";
-	block.element.style.borderWidth =
-		block.color == "silver" || block.color == "gold"
-			? block.height / 4 + "px"
-			: block.height / 5 + "px";
+	block.element.style.setProperty("--border-width", `${borderWidth}px`);
 
 	blocks.push(block);
 }

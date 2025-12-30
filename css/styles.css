@@ -126,9 +126,10 @@ button:hover {
 }
 
 .block {
+	--border-width: 2px;
 	box-sizing: border-box;
 	position: absolute;
-	border: solid;
+	border: solid var(--border-width);
 	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.75);
 }
 
@@ -226,16 +227,14 @@ button:hover {
 	font-size: 3vw;
 }
 
-.silver::after {
-	margin: -12.5% 0 -12.5% -12.5%;
+.green::after {
 	content: "";
-	display: block;
-	width: 10px;
+	background: red;
 	position: absolute;
-	inset: 0;
-	opacity: 0;
-	background: rgba(255, 255, 255, 0.5);
-	rotate: 20deg;
+	top: calc(var(--border-width) * -1);
+	left: calc(var(--border-width) * -1);
+	width: 10px;
+	height: calc(100% + 2 * var(--border-width));
 }
 
 .silver.shine::after {
