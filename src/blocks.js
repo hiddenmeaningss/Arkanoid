@@ -104,6 +104,8 @@ function initializeBlockColumn(top, left, color, i) {
 	block.element.style.width = block.width + "px";
 	block.element.style.height = block.height + "px";
 	block.element.style.setProperty("--border-width", `${borderWidth}px`);
+
+	blocks.push(block);
 }
 
 function initializeNextLevel() {
